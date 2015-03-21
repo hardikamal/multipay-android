@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_facebook_blue"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <LinearLayout
+        android:id="@+id/social_login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp" >
+        
+        <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/background" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/gplus_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </com.google.android.gms.common.SignInButton>
+
+        <com.facebook.widget.LoginButton
+            android:id="@+id/facebook_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/not_registered_label"
+        android:layout_below="@+id/social_login_layout"
+        android:orientation="vertical"
+        android:paddingTop="20dp" >
+
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/email_input_placeholder"
+            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/ic_username" />
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password_input_placeholder"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_password" />
+
+        <Button
+            android:id="@+id/native_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_logo"
+            android:onClick="signIn"
+            android:text="@string/login_button" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/not_registered_label"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/social_login_layout"
+        android:layout_below="@+id/login_container"
+        android:onClick="signUp"
+        android:paddingTop="10dp"
+        android:text="@string/not_registered_text"
+        android:textSize="18sp" />
+
+</RelativeLayout>
